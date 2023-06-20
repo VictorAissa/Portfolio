@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: helvetica-condensed;
+    src: url(./assets/fonts/Helvetica-Condensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: work-sans;
+    src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+@layer base {
+    html,
+    body,
+    #root,
+    .app_layout {
+        @apply h-full;
+    }
+    body {
+        font-family: "work-sans", sans-serif;
+        @apply bg-light;
+    }
+    h1 {
+        font-family: "helvetica-condensed", sans-serif;
+        @apply uppercase text-8xl font-bold;
+    }
+    h2 {
+        font-family: "helvetica-condensed", sans-serif;
+        @apply uppercase text-5xl font-semibold;
+    }
+    .content_padding-x {
+        @apply px-[5%];
+    }
+}
