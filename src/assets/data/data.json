@@ -9,7 +9,7 @@
                 "./src/assets/icons/html.png",
                 "./src/assets/icons/css.png",
                 "./src/assets/icons/sass.png",
-                "./src/assets/icons/js.png",
+                "./src/assets/icons/javascript.png",
                 "./src/assets/icons/react.png",
                 "./src/assets/icons/redux.png"
             ]
@@ -36,14 +36,16 @@
             "subtitle": "Projet personnel",
             "description": "Jus Loco® est une jeune entreprise qui propose des jus composés par un nutritionniste dans tous types d'évenements du sud-est de la France.",
             "problem": "Le fondateur de Jus Loco était en recherche de visibilité, il avait besoin d'un site web pour se faire connaître et a composé lui-même son site web sur WordPress. Malheureusement la composition du site semblait mal équilibrée et le contenu était peu attractif.",
-            "solution": "Un nouveau site en React au design sobre avec du contenu mieux réparti, quelques animations, un formulaire de contact géré en front-end grâce à EmailJS.",
+            "solution": "Un nouveau site en React au design sobre avec du contenu mieux réparti, quelques animations, un formulaire de contact géré en front-end grâce à Emailjavascript.",
             "year": "2023",
+            "cover": "./src/assets/projects/JusLoco.avif",
+            "screenShot": "",
             "gitHubLink": "github/jusloco",
             "liveLink": "vercel/jusloco",
-            "symbols": [
-                "./assets/icons/css.png",
-                "./assets/icons/react.png",
-                "./assets/icons/sass.png"
+            "icons": [
+                "./src/assets/icons/css.png",
+                "./src/assets/icons/react.png",
+                "./src/assets/icons/sass.png"
             ]
         },
         {
@@ -53,13 +55,15 @@
             "problem": "L'application web front-end est à créer avec des fonctionnalités utilisateur de base dans un premier temps : connection - déconnection et modifications de certaines données du compte. Les fonctionnalités gérant les comptes et les transactions seront à gérer dans un deuxième temps mais les routes de la future API sont déjà à déterminer dans la première phase.",
             "solution": "Une application React avec Redux pour la gestion du state permettant une mise à l'échelle future en anticipant une compléxification de la gestion des données côté front. La documentation de la future API préparée en .yaml avec SwaggerEditor.",
             "year": "2023",
+            "cover": "./src/assets/projects/ArgentBank.avif",
+            "screenShot": "",
             "gitHubLink": "github/argentbank",
             "liveLink": "???",
-            "symbols": [
-                "./assets/icons/css.png",
-                "./assets/icons/react.png",
-                "./assets/icons/sass.png",
-                "./assets/icons/redux.png"
+            "icons": [
+                "./src/assets/icons/css.png",
+                "./src/assets/icons/react.png",
+                "./src/assets/icons/sass.png",
+                "./src/assets/icons/redux.png"
             ]
         },
         {
@@ -67,15 +71,17 @@
             "subtitle": "Projet OpenClassrooms",
             "description": "Kasa est une fausse entreprise de location de biens immobiliers entre particuliers, à la manière d'Airbnb. Elle a pignon sur rue avec plus de 500 annonces postées par jour.",
             "problem": "Le site de l'entreprise est vieillissant avec une grosse part de code legacy en ASP.NET.",
-            "solution": "Une stack full js avec NodeJS côté back et React côté front. L'application front-end est codée sans ses fonctionnalités, seule la structure et l'apparence sont gérées pour l'instant avec un routage via react-router-dom et une gestion simple du state.",
+            "solution": "Une stack full javascript avec Nodejavascript côté back et React côté front. L'application front-end est codée sans ses fonctionnalités, seule la structure et l'apparence sont gérées pour l'instant avec un routage via react-router-dom et une gestion simple du state.",
             "year": "2023",
+            "cover": "./src/assets/projects/Kasa.avif",
+            "screenShot": "",
             "gitHubLink": "github/kasa",
             "liveLink": "vercel/kasa",
-            "symbols": [
-                "./assets/icons/css.png",
-                "./assets/icons/react.png",
-                "./assets/icons/sass.png",
-                "./assets/icons/redux.png"
+            "icons": [
+                "./src/assets/icons/css.png",
+                "./src/assets/icons/react.png",
+                "./src/assets/icons/sass.png",
+                "./src/assets/icons/redux.png"
             ]
         },
         {
@@ -85,22 +91,29 @@
             "problem": "Le site de Nina est long à charger et pas du tout optimisé pour le référencement par les moteurs de recherche ce qui nuit à sa visibilité.",
             "solution": "Une série d'audits pour mesurer les performances, l'accessibilité et le référencement : Google LightHouse, Wave. Redimensionnement, compression et adaptation du format des images; gichiers de script et de styles minifiés et execution différée; gestion du référencement local et de l'affichage sur les réseaux sociaux; suivi de l'audience du site avec Google Analytics et SearchConsole.",
             "year": "2023",
+            "cover": "./src/assets/projects/NinaCarducci.avif",
+            "screenShot": "",
             "gitHubLink": "github/ninacarducci",
             "liveLink": "",
-            "symbols": ["./assets/icons/html.png", "./assets/icons/seo.png"]
+            "icons": [
+                "./src/assets/icons/html.png",
+                "./src/assets/icons/seo.png"
+            ]
         },
         {
             "title": "SophieBluel",
             "subtitle": "Projet OpenClassrooms",
             "description": "Sophie Bluel est une persona qui représente une architecte freelance qui souhaite se doter d'un site pour présenter ses travaux.",
             "problem": "Une version statique du site existe déjà mais ne comporte aucune fonctionnalité à part l'affichage de base des sections. Il faut que l'utilisateur puisse se connecter pour pouvoir apporter des modifications aux travaux présentés, en ajouter ou en supprimer.",
-            "solution": "Une API REST documentée en .yaml préexiste au lancement du projet front. Côté client une simple application en html - css - vanilla JS pour implémenter les fonctionnalités.",
+            "solution": "Une API REST documentée en .yaml préexiste au lancement du projet front. Côté client une simple application en html - css - vanilla javascript pour implémenter les fonctionnalités.",
             "year": "2022",
+            "cover": "./src/assets/projects/SophieBluel.avif",
+            "screenShot": "",
             "gitHubLink": "github/sophiebluel",
             "liveLink": "???",
-            "symbols": [
-                "./assets/icons/css.png",
-                "./assets/icons/javascript.png"
+            "icons": [
+                "./src/assets/icons/css.png",
+                "./src/assets/icons/javascript.png"
             ]
         },
         {
@@ -110,12 +123,14 @@
             "problem": "L'application est à créer entièrement à commencer par la partie front, sans fonctionnalités dans cette phase là mais completement responsive et en mobile-first.",
             "solution": "Un simple site en html - css avec des animations css pour améliorer les intéractions de l'utilisateur avec les composants.",
             "year": "2022",
+            "cover": "./src/assets/projects/OhMyFood.avif",
+            "screenShot": "",
             "gitHubLink": "github/ohmyfood",
             "liveLink": "github/ohmyfood",
-            "symbols": [
-                "./assets/icons/html.png",
-                "./assets/icons/css.png",
-                "./assets/icons/sass.png"
+            "icons": [
+                "./src/assets/icons/html.png",
+                "./src/assets/icons/css.png",
+                "./src/assets/icons/sass.png"
             ]
         },
         {
@@ -125,9 +140,26 @@
             "problem": "Le projet n'en est à sa phase de conception et il s'agit de définir un cahier des charges et de proposer un outil de gestion.",
             "solution": "Des spécifications fonctionnelles et techniques complètes pour commencer le projet, un outil de gestion agile sur Notion.",
             "year": "2023",
+            "cover": "./src/assets/projects/MenuMaker.avif",
+            "screenShot": "",
             "gitHubLink": "",
             "liveLink": "notion/gestion de projet",
-            "symbols": ["./assets/icons/agile.png", "./assets/icons/notion.png"]
+            "icons": [
+                "./src/assets/icons/agile.png",
+                "./src/assets/icons/notion.png"
+            ]
         }
+    ],
+    "icons": [
+        "./src/assets/icons/html.png",
+        "./src/assets/icons/css.png",
+        "./src/assets/icons/sass.png",
+        "./src/assets/icons/javascript.png",
+        "./src/assets/icons/react.png",
+        "./src/assets/icons/redux.png",
+        "./src/assets/icons/github.png",
+        "./src/assets/icons/agile.png",
+        "./src/assets/icons/seo.png",
+        "./src/assets/icons/notion.png"
     ]
 }

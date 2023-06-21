@@ -16,7 +16,7 @@ function Experience({
     const itemStyle = (index) => {
         return {
             gridColumnStart: `${isEven(index) ? "1" : "2"}`,
-            gridRowStart: index + 2,
+            gridRowStart: index + 1,
             alignItems: `${isEven(index) ? "end" : "start"}`,
             background: `${background && "#ffffffd0"}`,
         };
@@ -38,7 +38,10 @@ function Experience({
                 {description}
             </span>
             {icons && (
-                <div className="flex flex-row gap-5 mt-5">
+                <div
+                    className="flex flex-row flex-wrap gap-5 mt-5"
+                    style={{ justifyContent: isEven(index) ? "end" : "start" }}
+                >
                     {icons.map((icon, index) => (
                         <img
                             src={icon}
@@ -49,7 +52,13 @@ function Experience({
                     ))}
                 </div>
             )}
-            {illustration && <img src={illustration} alt="" className="mt-5" />}
+            {illustration && (
+                <img
+                    src={illustration}
+                    alt=""
+                    className="mt-5 w-full max-w-2xl"
+                />
+            )}
         </article>
     );
 }

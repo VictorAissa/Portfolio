@@ -9,13 +9,13 @@ function Journey() {
     return (
         <section
             id="journey"
-            className={`grid grid-cols-2 gap-x-[10%] gap-y-96 content_padding-x relative bg-journey-background bg-cover`}
+            className="content_padding-x relative bg-journey-background bg-cover"
             style={{
                 paddingTop: paddingY,
                 paddingBottom: paddingY,
-                gridTemplateRows: `repeat(calc(${journeyItems.length} + 1), auto)`,
             }}
         >
+            <h2 className="mb-80">Parcours /</h2>
             <div
                 className={`w-[3px] bg-white_transparent absolute left-[50%] -translate-x-[50%]`}
                 style={{
@@ -23,20 +23,22 @@ function Journey() {
                     top: `calc(${paddingY} + ${lineOffset})`,
                 }}
             ></div>
-            <h2 className="col-start-1 row-start-1 col-span-2">Parcours /</h2>
-            {journeyItems.map((item, index) => (
-                <Experience
-                    key={`experience-${index}`}
-                    year={item.year}
-                    title={item.title}
-                    subtitle={item.subtitle}
-                    description={item.description}
-                    icons={item.icons}
-                    illustration={item.illustration}
-                    background={item.background}
-                    index={index}
-                />
-            ))}
+
+            <div className="grid grid-cols-2 gap-x-[10%] gap-y-96">
+                {journeyItems.map((item, index) => (
+                    <Experience
+                        key={`experience-${index}`}
+                        year={item.year}
+                        title={item.title}
+                        subtitle={item.subtitle}
+                        description={item.description}
+                        icons={item.icons}
+                        illustration={item.illustration}
+                        background={item.background}
+                        index={index}
+                    />
+                ))}
+            </div>
         </section>
     );
 }
