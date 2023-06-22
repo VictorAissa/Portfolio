@@ -41,4 +41,7 @@
             rgba(0, 0, 0, 0) 90%
         );
     }
+    .input {
+        @apply mb-8 p-3 rounded-sm resize-none shadow-sm;
+    }
 }

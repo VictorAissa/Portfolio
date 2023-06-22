@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
-import cover from "../../assets/backgrounds/contact_bg.avif";
 
 function Contact() {
     const form = useRef();
@@ -18,10 +17,13 @@ function Contact() {
             )
             .then(
                 (result) => {
-                    setResMessage(result.text);
+                    if (result.text === "OK") {
+                        setResMessage("C'est parti !");
+                    }
                 },
                 (error) => {
-                    setResMessage(error.text);
+                    console.log(error);
+                    setResMessage("Aïe, il y a eu un problème");
                 }
             );
         form.current[0].value = "";
@@ -29,12 +31,28 @@ function Contact() {
         form.current[2].value = "";
     };
 
+    useEffect(() => {
+        if (resMessage) {
+            setTimeout(() => {
+                setResMessage(null);
+            }, 10000);
+        }
+    });
+
     return (
-        <section>
-            <img src={cover} alt="Bout de montagne dans le mauvais temps" />
-            <form className="" ref={form} onSubmit={sendEmail}>
+        <section
+            id="contact"
+            className="bg-intermediate content_padding-x py-40"
+        >
+            <h2 className="mb-40">Contact /</h2>
+            <form
+                className="sm:w-[60%] lg:w-[40%] flex flex-col gap-3 text-lg "
+                ref={form}
+                onSubmit={sendEmail}
+            >
                 <label htmlFor="nameField">Nom</label>
                 <input
+                    className="input"
                     type="text"
                     placeholder="John Doe"
                     id="nameField"
@@ -42,18 +60,28 @@ function Contact() {
                 />
                 <label htmlFor="emailField">Email</label>
                 <input
+                    className="input"
                     type="text"
-                    placeholder="johndoe@jusloco.fr"
+                    placeholder="johndoe@email.com"
                     id="emailField"
                     name="user_email"
                 />
                 <label htmlFor="messageField">Message</label>
                 <textarea
+                    className="input h-36 sm:h-48"
                     placeholder="Salut Victor, tu vas bien ?"
                     id="messageField"
                     name="message"
                 ></textarea>
-                <button type="submit">Envoyer</button>
+                <button
+                    className="self-start rounded-sm text-white bg-bright px-2 py-1 "
+                    type="submit"
+                >
+                    Envoyer
+                </button>
+                {resMessage && (
+                    <span className="self-center mt-6 ">{resMessage}</span>
+                )}
             </form>
         </section>
     );

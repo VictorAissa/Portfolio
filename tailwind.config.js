@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
@@ -12,14 +13,15 @@ export default {
             white_transparent: "#ffffffb0",
             cover_lightning: "#ffffff25",
         },
+
         extend: {
             backgroundImage: {
                 "hero-background":
-                    "url('./src/assets/backgrounds/about_bg_cut.jpg')",
+                    "url('../src/assets/backgrounds/about_bg_cut.avif')",
                 "journey-background":
-                    "url('./src/assets/backgrounds/journey_bg.svg')",
+                    "url('../src/assets/backgrounds/journey_bg.svg')",
                 "skills-background":
-                    "url('./src/assets/backgrounds/skills_bg.avif')",
+                    "url('../src/assets/backgrounds/skills_bg.avif')",
             },
         },
     },

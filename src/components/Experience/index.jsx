@@ -30,7 +30,8 @@ function Experience({
                 style={{ textAlign: isEven(index) ? "end" : "start" }}
             >
                 <span>
-                    <span className="font-semibold">{title}</span> |{" "}
+                    <span className="font-semibold">{title}</span>
+                    <span> | </span>
                     <span>{subtitle}</span>
                 </span>
             </div>

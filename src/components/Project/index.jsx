@@ -1,15 +1,26 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Project({ year, title, cover, icons }) {
+function Project({ year, title, cover, icons, index }) {
+    const navigate = useNavigate();
+    const [isClick, setIsClick] = useState(false);
     const articleWidth = 35;
     const figureHeight = articleWidth * 0.6;
 
+    useEffect(() => {
+        if (isClick) {
+            navigate("/project/" + index);
+        }
+    }, [index, isClick, navigate]);
+
     return (
         <article
-            className=" justify-self-center max-w-[490px]"
+            className=" justify-self-center max-w-[490px] cursor-pointer"
             style={{
                 width: `${articleWidth}vw`,
             }}
+            onClick={() => setIsClick(true)}
         >
             <figure
                 className="bg-cover bg-center relative max-h-[294px]"
@@ -58,6 +69,7 @@ Project.propTypes = {
     year: PropTypes.string.isRequired,
     icons: PropTypes.arrayOf(PropTypes.string).isRequired,
     cover: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
 };
 
 export default Project;

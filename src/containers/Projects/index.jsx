@@ -2,7 +2,7 @@ import Project from "../../components/Project";
 import data from "../../assets/data/data.json";
 
 function Projects() {
-    const projectsItems = data.projets;
+    const projectsItems = data.projects;
 
     return (
         <section id="projects" className="content_padding-x py-40">
@@ -16,6 +16,7 @@ function Projects() {
                         title={project.title}
                         cover={project.cover}
                         icons={project.icons}
+                        index={index}
                     />
                 ))}
             </div>

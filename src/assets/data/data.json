@@ -1,5 +1,5 @@
 {
-    "parcours": [
+    "journey": [
         {
             "title": "OpenClassrooms",
             "subtitle": "Certification développeur web",
@@ -30,7 +30,7 @@
             "background": "true"
         }
     ],
-    "projets": [
+    "projects": [
         {
             "title": "JusLoco",
             "subtitle": "Projet personnel",
@@ -39,9 +39,9 @@
             "solution": "Un nouveau site en React au design sobre avec du contenu mieux réparti, quelques animations, un formulaire de contact géré en front-end grâce à Emailjavascript.",
             "year": "2023",
             "cover": "./src/assets/projects/JusLoco.avif",
-            "screenShot": "",
-            "gitHubLink": "github/jusloco",
-            "liveLink": "vercel/jusloco",
+            "screenShot": "./src/assets/projects/screenshots/JusLoco.avif",
+            "gitHubLink": "https://github.com/VictorAissa/JusLoco",
+            "liveLink": "https://jus-loco.vercel.app/",
             "icons": [
                 "./src/assets/icons/css.png",
                 "./src/assets/icons/react.png",
@@ -56,9 +56,8 @@
             "solution": "Une application React avec Redux pour la gestion du state permettant une mise à l'échelle future en anticipant une compléxification de la gestion des données côté front. La documentation de la future API préparée en .yaml avec SwaggerEditor.",
             "year": "2023",
             "cover": "./src/assets/projects/ArgentBank.avif",
-            "screenShot": "",
-            "gitHubLink": "github/argentbank",
-            "liveLink": "???",
+            "screenShot": "./src/assets/projects/screenshots/ArgentBank.avif",
+            "gitHubLink": "https://github.com/VictorAissa/ArgentBank",
             "icons": [
                 "./src/assets/icons/css.png",
                 "./src/assets/icons/react.png",
@@ -74,9 +73,9 @@
             "solution": "Une stack full javascript avec Nodejavascript côté back et React côté front. L'application front-end est codée sans ses fonctionnalités, seule la structure et l'apparence sont gérées pour l'instant avec un routage via react-router-dom et une gestion simple du state.",
             "year": "2023",
             "cover": "./src/assets/projects/Kasa.avif",
-            "screenShot": "",
-            "gitHubLink": "github/kasa",
-            "liveLink": "vercel/kasa",
+            "screenShot": "./src/assets/projects/screenshots/Kasa.avif",
+            "gitHubLink": "https://github.com/VictorAissa/Kasa",
+            "liveLink": "https://kasa-rho.vercel.app",
             "icons": [
                 "./src/assets/icons/css.png",
                 "./src/assets/icons/react.png",
@@ -92,9 +91,8 @@
             "solution": "Une série d'audits pour mesurer les performances, l'accessibilité et le référencement : Google LightHouse, Wave. Redimensionnement, compression et adaptation du format des images; gichiers de script et de styles minifiés et execution différée; gestion du référencement local et de l'affichage sur les réseaux sociaux; suivi de l'audience du site avec Google Analytics et SearchConsole.",
             "year": "2023",
             "cover": "./src/assets/projects/NinaCarducci.avif",
-            "screenShot": "",
-            "gitHubLink": "github/ninacarducci",
-            "liveLink": "",
+            "screenShot": "./src/assets/projects/screenshots/NinaCarducci.avif",
+            "gitHubLink": "https://github.com/VictorAissa/NinaCarducci",
             "icons": [
                 "./src/assets/icons/html.png",
                 "./src/assets/icons/seo.png"
@@ -108,9 +106,8 @@
             "solution": "Une API REST documentée en .yaml préexiste au lancement du projet front. Côté client une simple application en html - css - vanilla javascript pour implémenter les fonctionnalités.",
             "year": "2022",
             "cover": "./src/assets/projects/SophieBluel.avif",
-            "screenShot": "",
-            "gitHubLink": "github/sophiebluel",
-            "liveLink": "???",
+            "screenShot": "./src/assets/projects/screenshots/SophieBluel.avif",
+            "gitHubLink": "https://github.com/VictorAissa/Portfolio_SophieBluel",
             "icons": [
                 "./src/assets/icons/css.png",
                 "./src/assets/icons/javascript.png"
@@ -124,9 +121,9 @@
             "solution": "Un simple site en html - css avec des animations css pour améliorer les intéractions de l'utilisateur avec les composants.",
             "year": "2022",
             "cover": "./src/assets/projects/OhMyFood.avif",
-            "screenShot": "",
-            "gitHubLink": "github/ohmyfood",
-            "liveLink": "github/ohmyfood",
+            "screenShot": "./src/assets/projects/screenshots/OhMyFood.avif",
+            "gitHubLink": "https://github.com/VictorAissa/Ohmyfood",
+            "liveLink": "https://victoraissa.github.io/Ohmyfood/",
             "icons": [
                 "./src/assets/icons/html.png",
                 "./src/assets/icons/css.png",
@@ -137,13 +134,12 @@
             "title": "MenuMaker",
             "subtitle": "Projet OpenClassrooms",
             "description": "Qwenta est une fausse entreprise d'impression qui souhaite faire développer une nouvelle application destinée aux restaurateurs qui leur permettrait de créer la carte de leur restaurant en ligne pour pouvoir ensuite la gérer de differentes façons",
-            "problem": "Le projet n'en est à sa phase de conception et il s'agit de définir un cahier des charges et de proposer un outil de gestion.",
+            "problem": "Le projet n'en est qu'à sa phase de conception et il s'agit de définir un cahier des charges et de proposer un outil de gestion.",
             "solution": "Des spécifications fonctionnelles et techniques complètes pour commencer le projet, un outil de gestion agile sur Notion.",
             "year": "2023",
             "cover": "./src/assets/projects/MenuMaker.avif",
-            "screenShot": "",
-            "gitHubLink": "",
-            "liveLink": "notion/gestion de projet",
+            "screenShot": "./src/assets/projects/screenshots/MenuMaker.avif",
+            "liveLink": "https://www.notion.so/Gestion-de-projet-c9be5d8e18cb441d8c8ba63f39c9f532",
             "icons": [
                 "./src/assets/icons/agile.png",
                 "./src/assets/icons/notion.png"

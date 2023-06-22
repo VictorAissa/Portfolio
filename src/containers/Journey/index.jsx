@@ -4,7 +4,7 @@ import data from "../../assets/data/data.json";
 function Journey() {
     const paddingY = "10rem";
     const lineOffset = "15rem";
-    const journeyItems = data.parcours;
+    const journeyItems = data.journey;
 
     return (
         <section
