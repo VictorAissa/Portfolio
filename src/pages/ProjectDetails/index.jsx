@@ -9,7 +9,7 @@ function ProjectDetails() {
     return (
         <section className="flex flex-col gap-10 content_padding-x py-32">
             <img
-                src={"." + projectData.screenShot}
+                src={projectData.screenShot}
                 alt=""
                 className="w-[70%] max-w-[1260px] self-center"
             />

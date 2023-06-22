@@ -1,5 +1,4 @@
 import arrowShort from "../../assets/icons/arrows/short_white.png";
-// import arrowLong from "../../assets/icons/arrows/long_white.png";
 import pdf from "../../assets/data/Victor_LABORDE_CV.pdf";
 
 function Footer() {
