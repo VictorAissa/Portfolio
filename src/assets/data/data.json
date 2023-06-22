@@ -6,12 +6,12 @@
             "description": "Un parcours complet pour devenir développeur-intégrateur web en React. Une approche professionnelle par projets successifs, une méthodologie de travail couvrant les étapes de la conception au déploiement. Les principaux outils des développeurs front-end y sont utilisés pour maximiser la productivité, également des méthodologies de gestion de projet agile et de l'optimisation du référencement naturel de sites web.",
             "year": "2022 / 2023",
             "icons": [
-                "../src/assets/icons/html.png",
-                "../src/assets/icons/css.png",
-                "../src/assets/icons/sass.png",
-                "../src/assets/icons/javascript.png",
-                "../src/assets/icons/react.png",
-                "../src/assets/icons/redux.png"
+                "/assets/icons/html.png",
+                "/assets/icons/css.png",
+                "/assets/icons/sass.png",
+                "/assets/icons/javascript.png",
+                "/assets/icons/react.png",
+                "/assets/icons/redux.png"
             ]
         },
         {
@@ -19,7 +19,7 @@
             "subtitle": "Soldat de montagne",
             "description": "Un engagement de près de 10 ans dans les troupes de montagne, au 27ème Bataillon de chasseurs alpins d'Annecy. Très riche d'expériences et de formations en tous genres: montagne, tir, parapente, conduite tout terrain... C'était aussi l'apprentissage de technos diverses pour mener à bien les missions: outils numériques embarqués du mobile android aux calculateurs de tir, programmes de cartographie, navigation ou messagerie sécurisée. Pas mal de soft skills aussi et des compétences annexes comme la bureautique ou la capacité à dispenser des instructions.",
             "year": "2013 / 2022",
-            "illustration": "../src/assets/icons/ar15.png",
+            "illustration": "/assets/icons/ar15.png",
             "background": "true"
         },
         {
@@ -38,14 +38,14 @@
             "problem": "Le fondateur de Jus Loco était en recherche de visibilité, il avait besoin d'un site web pour se faire connaître et a composé lui-même son site web sur WordPress. Malheureusement la composition du site semblait mal équilibrée et le contenu était peu attractif.",
             "solution": "Un nouveau site en React au design sobre avec du contenu mieux réparti, quelques animations, un formulaire de contact géré en front-end grâce à Emailjavascript.",
             "year": "2023",
-            "cover": "../src/assets/projects/JusLoco.avif",
-            "screenShot": "../src/assets/projects/screenshots/JusLoco.avif",
+            "cover": "/assets/projects/JusLoco.avif",
+            "screenShot": "/assets/projects/screenshots/JusLoco.avif",
             "gitHubLink": "https://github.com/VictorAissa/JusLoco",
             "liveLink": "https://jus-loco.vercel.app/",
             "icons": [
-                "../src/assets/icons/css.png",
-                "../src/assets/icons/react.png",
-                "../src/assets/icons/sass.png"
+                "/assets/icons/css.png",
+                "/assets/icons/react.png",
+                "/assets/icons/sass.png"
             ]
         },
         {
@@ -55,14 +55,14 @@
             "problem": "L'application web front-end est à créer avec des fonctionnalités utilisateur de base dans un premier temps : connection - déconnection et modifications de certaines données du compte. Les fonctionnalités gérant les comptes et les transactions seront à gérer dans un deuxième temps mais les routes de la future API sont déjà à déterminer dans la première phase.",
             "solution": "Une application React avec Redux pour la gestion du state permettant une mise à l'échelle future en anticipant une compléxification de la gestion des données côté front. La documentation de la future API préparée en .yaml avec SwaggerEditor.",
             "year": "2023",
-            "cover": "../src/assets/projects/ArgentBank.avif",
-            "screenShot": "../src/assets/projects/screenshots/ArgentBank.avif",
+            "cover": "/assets/projects/ArgentBank.avif",
+            "screenShot": "/assets/projects/screenshots/ArgentBank.avif",
             "gitHubLink": "https://github.com/VictorAissa/ArgentBank",
             "icons": [
-                "../src/assets/icons/css.png",
-                "../src/assets/icons/react.png",
-                "../src/assets/icons/sass.png",
-                "../src/assets/icons/redux.png"
+                "/assets/icons/css.png",
+                "/assets/icons/react.png",
+                "/assets/icons/sass.png",
+                "/assets/icons/redux.png"
             ]
         },
         {
@@ -72,15 +72,15 @@
             "problem": "Le site de l'entreprise est vieillissant avec une grosse part de code legacy en ASP.NET.",
             "solution": "Une stack full javascript avec Nodejavascript côté back et React côté front. L'application front-end est codée sans ses fonctionnalités, seule la structure et l'apparence sont gérées pour l'instant avec un routage via react-router-dom et une gestion simple du state.",
             "year": "2023",
-            "cover": "../src/assets/projects/Kasa.avif",
-            "screenShot": "../src/assets/projects/screenshots/Kasa.avif",
+            "cover": "/assets/projects/Kasa.avif",
+            "screenShot": "/assets/projects/screenshots/Kasa.avif",
             "gitHubLink": "https://github.com/VictorAissa/Kasa",
             "liveLink": "https://kasa-rho.vercel.app",
             "icons": [
-                "../src/assets/icons/css.png",
-                "../src/assets/icons/react.png",
-                "../src/assets/icons/sass.png",
-                "../src/assets/icons/redux.png"
+                "/assets/icons/css.png",
+                "/assets/icons/react.png",
+                "/assets/icons/sass.png",
+                "/assets/icons/redux.png"
             ]
         },
         {
@@ -90,13 +90,10 @@
             "problem": "Le site de Nina est long à charger et pas du tout optimisé pour le référencement par les moteurs de recherche ce qui nuit à sa visibilité.",
             "solution": "Une série d'audits pour mesurer les performances, l'accessibilité et le référencement : Google LightHouse, Wave. Redimensionnement, compression et adaptation du format des images; gichiers de script et de styles minifiés et execution différée; gestion du référencement local et de l'affichage sur les réseaux sociaux; suivi de l'audience du site avec Google Analytics et SearchConsole.",
             "year": "2023",
-            "cover": "../src/assets/projects/NinaCarducci.avif",
-            "screenShot": "../src/assets/projects/screenshots/NinaCarducci.avif",
+            "cover": "/assets/projects/NinaCarducci.avif",
+            "screenShot": "/assets/projects/screenshots/NinaCarducci.avif",
             "gitHubLink": "https://github.com/VictorAissa/NinaCarducci",
-            "icons": [
-                "../src/assets/icons/html.png",
-                "../src/assets/icons/seo.png"
-            ]
+            "icons": ["/assets/icons/html.png", "/assets/icons/seo.png"]
         },
         {
             "title": "SophieBluel",
@@ -105,13 +102,10 @@
             "problem": "Une version statique du site existe déjà mais ne comporte aucune fonctionnalité à part l'affichage de base des sections. Il faut que l'utilisateur puisse se connecter pour pouvoir apporter des modifications aux travaux présentés, en ajouter ou en supprimer.",
             "solution": "Une API REST documentée en .yaml préexiste au lancement du projet front. Côté client une simple application en html - css - vanilla javascript pour implémenter les fonctionnalités.",
             "year": "2022",
-            "cover": "../src/assets/projects/SophieBluel.avif",
-            "screenShot": "../src/assets/projects/screenshots/SophieBluel.avif",
+            "cover": "/assets/projects/SophieBluel.avif",
+            "screenShot": "/assets/projects/screenshots/SophieBluel.avif",
             "gitHubLink": "https://github.com/VictorAissa/Portfolio_SophieBluel",
-            "icons": [
-                "../src/assets/icons/css.png",
-                "../src/assets/icons/javascript.png"
-            ]
+            "icons": ["/assets/icons/css.png", "/assets/icons/javascript.png"]
         },
         {
             "title": "OhMyFood",
@@ -120,14 +114,14 @@
             "problem": "L'application est à créer entièrement à commencer par la partie front, sans fonctionnalités dans cette phase là mais completement responsive et en mobile-first.",
             "solution": "Un simple site en html - css avec des animations css pour améliorer les intéractions de l'utilisateur avec les composants.",
             "year": "2022",
-            "cover": "../src/assets/projects/OhMyFood.avif",
-            "screenShot": "../src/assets/projects/screenshots/OhMyFood.avif",
+            "cover": "/assets/projects/OhMyFood.avif",
+            "screenShot": "/assets/projects/screenshots/OhMyFood.avif",
             "gitHubLink": "https://github.com/VictorAissa/Ohmyfood",
             "liveLink": "https://victoraissa.github.io/Ohmyfood/",
             "icons": [
-                "../src/assets/icons/html.png",
-                "../src/assets/icons/css.png",
-                "../src/assets/icons/sass.png"
+                "/assets/icons/html.png",
+                "/assets/icons/css.png",
+                "/assets/icons/sass.png"
             ]
         },
         {
@@ -137,25 +131,22 @@
             "problem": "Le projet n'en est qu'à sa phase de conception et il s'agit de définir un cahier des charges et de proposer un outil de gestion.",
             "solution": "Des spécifications fonctionnelles et techniques complètes pour commencer le projet, un outil de gestion agile sur Notion.",
             "year": "2023",
-            "cover": "../src/assets/projects/MenuMaker.avif",
-            "screenShot": "../src/assets/projects/screenshots/MenuMaker.avif",
+            "cover": "/assets/projects/MenuMaker.avif",
+            "screenShot": "/assets/projects/screenshots/MenuMaker.avif",
             "liveLink": "https://www.notion.so/Gestion-de-projet-c9be5d8e18cb441d8c8ba63f39c9f532",
-            "icons": [
-                "../src/assets/icons/agile.png",
-                "../src/assets/icons/notion.png"
-            ]
+            "icons": ["/assets/icons/agile.png", "/assets/icons/notion.png"]
         }
     ],
     "icons": [
-        "../src/assets/icons/html.png",
-        "../src/assets/icons/css.png",
-        "../src/assets/icons/sass.png",
-        "../src/assets/icons/javascript.png",
-        "../src/assets/icons/react.png",
-        "../src/assets/icons/redux.png",
-        "../src/assets/icons/github.png",
-        "../src/assets/icons/agile.png",
-        "../src/assets/icons/seo.png",
-        "../src/assets/icons/notion.png"
+        "/assets/icons/html.png",
+        "/assets/icons/css.png",
+        "/assets/icons/sass.png",
+        "/assets/icons/javascript.png",
+        "/assets/icons/react.png",
+        "/assets/icons/redux.png",
+        "/assets/icons/github.png",
+        "/assets/icons/agile.png",
+        "/assets/icons/seo.png",
+        "/assets/icons/notion.png"
     ]
 }
