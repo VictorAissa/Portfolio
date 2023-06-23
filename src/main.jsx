@@ -33,7 +33,7 @@ const router = createBrowserRouter(
                     </>
                 }
             />
-            <Route path="project/:id" element={<ProjectDetails />} />
+            <Route path="/project/:id" element={<ProjectDetails />} />
             <Route path="*" element={<Error />} />
         </Route>
     )

@@ -6,9 +6,8 @@ function Skills() {
     return (
         <section
             id="skills"
-            className="flex flex-col bg-skills-background bg-cover bg-center content_padding-x pt-40 pb-80"
+            className="flex flex-col bg-skills-background bg-cover bg-center content_padding-x pt-28 sm:pt-40 pb-56 sm:pb-80"
         >
-            {/* <div className="w-full h-full absolute top-0 left-0 bg-cover_lightning"></div> */}
             <h2 className="mb-[10vh]">Skills /</h2>
             <div className="flex flex-wrap gap-8 2xl:gap-16 ">
                 {icons.map((icon, index) => (

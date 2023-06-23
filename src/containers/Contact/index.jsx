@@ -35,18 +35,18 @@ function Contact() {
         if (resMessage) {
             setTimeout(() => {
                 setResMessage(null);
-            }, 10000);
+            }, 5000);
         }
     });
 
     return (
         <section
             id="contact"
-            className="bg-intermediate content_padding-x py-40"
+            className="bg-intermediate content_padding-x py-28 sm:py-40"
         >
-            <h2 className="mb-40">Contact /</h2>
+            <h2 className="mb-20 sm:mb-40">Contact /</h2>
             <form
-                className="sm:w-[60%] lg:w-[40%] flex flex-col gap-3 text-lg "
+                className="w-full sm:w-[60%] xl:w-[40%] flex flex-col gap-3 text-lg "
                 ref={form}
                 onSubmit={sendEmail}
             >
@@ -68,7 +68,7 @@ function Contact() {
                 />
                 <label htmlFor="messageField">Message</label>
                 <textarea
-                    className="input h-36 sm:h-48"
+                    className="input h-48 sm:h-60"
                     placeholder="Salut Victor, tu vas bien ?"
                     id="messageField"
                     name="message"

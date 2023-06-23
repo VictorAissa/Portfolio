@@ -1,0 +1,8 @@
+{
+    "redirects": [
+        {
+            "source": "/project/:id",
+            "destination": "https://portfolio-victoraissa.vercel.app/"
+        }
+    ]
+}

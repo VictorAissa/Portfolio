@@ -5,10 +5,10 @@ function Projects() {
     const projectsItems = data.projects;
 
     return (
-        <section id="projects" className="content_padding-x py-40">
-            <h2 className="mb-52 2xl:mb-72">Projets /</h2>
+        <section id="projects" className="content_padding-x py-28 sm:py-40">
+            <h2 className="mb-36 sm:mb-52 2xl:mb-72">Projets /</h2>
 
-            <div className="grid grid-cols-2 gap-y-56 2xl:gap-y-72">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-36 sm:gap-y-56 2xl:gap-y-72">
                 {projectsItems.map((project, index) => (
                     <Project
                         key={`project-${index}`}

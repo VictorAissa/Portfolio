@@ -11,7 +11,7 @@ export default {
             white: "#fff",
             black: "#000",
             white_transparent: "#ffffffb0",
-            cover_lightning: "#ffffff25",
+            overlay: "#00000060",
         },
 
         extend: {

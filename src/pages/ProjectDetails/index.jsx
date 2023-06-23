@@ -1,35 +1,45 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import data from "../../assets/data/data.json";
 import arrowShort from "../../assets/icons/arrows/short_black.png";
 
 function ProjectDetails() {
     const { id } = useParams();
     const projectData = data.projects[id];
+    const [windowWidth] = useState(window.innerWidth);
+    const desktopResolution = windowWidth > 640;
 
     return (
-        <section className="flex flex-col gap-10 content_padding-x py-32">
+        <section className="flex flex-col gap-10 content_padding-x py-24 sm:py-32">
             <img
                 src={projectData.screenShot}
-                alt=""
-                className="w-[70%] max-w-[1260px] self-center"
+                alt={"illustration du projet " + projectData.title}
+                className="w-full sm:w-[70%] max-w-[1260px] self-center"
             />
 
-            <div className="mt-32 max-w-[1800px] ">
-                <h1 className="inline-block text-4xl mb-3 capitalize">
+            <div className="sm:mt-32 max-w-[1800px] ">
+                <h1 className="inline-block text-3xl sm:text-4xl capitalize">
                     {projectData.title}
                 </h1>
-                <span className="text-4xl"> | </span>
-                <span className="text-2xl">{projectData.subtitle}</span>
-                <p>{projectData.description}</p>
+
+                {desktopResolution && (
+                    <span className="text-3xl sm:text-4xl"> | </span>
+                )}
+                {!desktopResolution && <br />}
+
+                <span className="text-xl sm:text-2xl">
+                    {projectData.subtitle}
+                </span>
+                <p className="mt-3">{projectData.description}</p>
             </div>
             <div className="max-w-[1800px]">
-                <h2 className="text-3xl mb-3 capitalize font-['work_sans'] font-normal ">
+                <h2 className="text-2xl sm:text-3xl mb-3 capitalize font-['work_sans'] font-normal ">
                     Problématique
                 </h2>
                 <p>{projectData.problem}</p>
             </div>
             <div className="max-w-[1800px]">
-                <h2 className="text-3xl mb-3 capitalize font-['work_sans'] font-normal ">
+                <h2 className="text-2xl sm:text-3xl mb-3 capitalize font-['work_sans'] font-normal ">
                     Solution
                 </h2>
                 <p>{projectData.solution}</p>

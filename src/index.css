@@ -25,11 +25,11 @@
     }
     h1 {
         font-family: "helvetica-condensed", sans-serif;
-        @apply uppercase text-8xl font-bold;
+        @apply uppercase text-6xl sm:text-8xl font-bold;
     }
     h2 {
         font-family: "helvetica-condensed", sans-serif;
-        @apply uppercase text-5xl font-semibold;
+        @apply uppercase text-3xl sm:text-5xl font-semibold;
     }
     .content_padding-x {
         @apply px-[5%];

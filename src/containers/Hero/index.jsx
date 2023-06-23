@@ -10,9 +10,11 @@ function Hero() {
                     <br />
                     Laborde
                 </h1>
-                <span className="text-xl">Développeur web front-end</span>
+                <span className="text-lg sm:text-xl">
+                    Développeur web front-end
+                </span>
             </div>
-            <span className="flex col-start-2 row-start-2 justify-end px-[20%] text-6xl">
+            <span className="flex col-start-2 row-start-2 justify-end px-[20%] text-4xl sm:text-6xl">
                 Portfolio
             </span>
         </section>

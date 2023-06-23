@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 function Experience({
@@ -10,24 +11,38 @@ function Experience({
     background,
     index,
 }) {
+    const [windowWidth] = useState(window.innerWidth);
+    const desktopResolution = windowWidth > 640;
     const isEven = (number) => {
         return number % 2 === 0 ? true : false;
     };
+
     const itemStyle = (index) => {
-        return {
-            gridColumnStart: `${isEven(index) ? "1" : "2"}`,
-            gridRowStart: index + 1,
-            alignItems: `${isEven(index) ? "end" : "start"}`,
-            background: `${background && "#ffffffd0"}`,
-        };
+        if (desktopResolution) {
+            return {
+                gridColumnStart: `${isEven(index) ? "1" : "2"}`,
+                gridRowStart: index + 1,
+                alignItems: `${isEven(index) ? "end" : "start"}`,
+                background: `${background && "#ffffffd0"}`,
+            };
+        } else {
+            return {
+                gridAutoFlow: "column",
+                background: `${background && "#ffffffd0"}`,
+            };
+        }
+    };
+
+    const alignmentStyle = (index) => {
+        return !desktopResolution ? "start" : isEven(index) ? "end" : "start";
     };
 
     return (
-        <article className="flex flex-col p-8" style={itemStyle(index)}>
+        <article className="flex flex-col p-6 sm:p-8" style={itemStyle(index)}>
             <span className="text-2xl mb-6 font-medium">{year}</span>
             <div
                 className="text-xl mb-3"
-                style={{ textAlign: isEven(index) ? "end" : "start" }}
+                style={{ textAlign: alignmentStyle(index) }}
             >
                 <span>
                     <span className="font-semibold">{title}</span>
@@ -35,13 +50,13 @@ function Experience({
                     <span>{subtitle}</span>
                 </span>
             </div>
-            <span style={{ textAlign: isEven(index) ? "end" : "start" }}>
+            <span style={{ textAlign: alignmentStyle(index) }}>
                 {description}
             </span>
             {icons && (
                 <div
                     className="flex flex-row flex-wrap gap-5 mt-5"
-                    style={{ justifyContent: isEven(index) ? "end" : "start" }}
+                    style={{ justifyContent: alignmentStyle(index) }}
                 >
                     {icons.map((icon, index) => (
                         <img
