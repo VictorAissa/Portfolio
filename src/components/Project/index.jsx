@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -7,6 +8,51 @@ function Project({ year, title, cover, icons, index }) {
     const desktopResolution = windowWidth > 640;
     const articleWidth = desktopResolution ? 35 : 80;
     const figureHeight = articleWidth * 0.6;
+    const article = useRef();
+    const image = useRef();
+    const [isHover, setIsHover] = useState(false);
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            if (desktopResolution) {
+                if (isHover) {
+                    gsap.to(image.current, {
+                        scale: 1.3,
+                        ease: "power1.inOut",
+                    });
+                }
+                if (!isHover) {
+                    gsap.from(image.current, {
+                        scale: 1.3,
+                        ease: "power1.inOut",
+                    });
+                }
+            }
+            if (!desktopResolution) {
+                gsap.to(image.current, {
+                    scale: 1.3,
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: image.current,
+                        scrub: true,
+                        start: "50% 85%",
+                        end: "50% 50%",
+                    },
+                });
+                gsap.from(image.current, {
+                    scale: 1.3,
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: image.current,
+                        scrub: true,
+                        start: "50% 50%",
+                        end: "50% 15%",
+                    },
+                });
+            }
+        }, article);
+        return () => ctx.revert();
+    }, [desktopResolution, isHover]);
 
     return (
         <article
@@ -14,17 +60,23 @@ function Project({ year, title, cover, icons, index }) {
             style={{
                 width: articleWidth + "vw",
             }}
+            ref={article}
         >
-            <Link to={`/project/${index}`}>
-                <figure
-                    className="relative max-h-[294px] rounded-sm overflow-hidden"
-                    style={{
-                        background: `url('${cover}')`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        height: figureHeight + "vw",
-                    }}
-                >
+            <Link
+                to={`/project/${index}`}
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
+            >
+                <figure className="relative max-h-[294px] rounded-sm overflow-hidden">
+                    <img
+                        src={cover}
+                        alt=""
+                        className="w-full h-full object-cover object-center"
+                        style={{
+                            height: figureHeight + "vw",
+                        }}
+                        ref={image}
+                    />
                     <div className="w-full h-full absolute top-0 left-0 z-10 gradient"></div>
                     <figcaption className="absolute left-[5%] bottom-[7%] z-20 text-white leading-none">
                         <span

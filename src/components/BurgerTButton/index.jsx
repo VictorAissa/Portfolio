@@ -6,9 +6,9 @@ function BurgerMenu({ toggle }) {
             className="h-auto fixed flex flex-col justify-center gap-1"
             onClick={toggle}
         >
-            <div className="w-10 h-2 bg-dark rounded-sm mr-8"></div>
-            <div className="w-10 h-2 bg-dark rounded-sm mr-8"></div>
-            <div className="w-10 h-2 bg-dark rounded-sm mr-8"></div>
+            <div className="w-8 h-1 bg-dark rounded-[1px] mr-8"></div>
+            <div className="w-8 h-1 bg-dark rounded-[1px] mr-8"></div>
+            <div className="w-8 h-1 bg-dark rounded-[1px] mr-8"></div>
         </div>
     );
 }

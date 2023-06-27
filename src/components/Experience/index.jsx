@@ -38,7 +38,10 @@ function Experience({
     };
 
     return (
-        <article className="flex flex-col p-6 sm:p-8" style={itemStyle(index)}>
+        <article
+            className="flex flex-col p-6 sm:p-8 opacity-100 experience-article"
+            style={itemStyle(index)}
+        >
             <span className="text-2xl mb-6 font-medium">{year}</span>
             <div
                 className="text-xl mb-3"
