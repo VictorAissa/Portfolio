@@ -38,8 +38,8 @@ function Journey() {
                     end: `${lineHeight} bottom`,
                 },
             });
-            const articles = self.selector(".experience-article");
-            articles.forEach((article) => {
+            const experienceArticles = self.selector(".experience-article");
+            experienceArticles.forEach((article) => {
                 gsap.from(article, {
                     opacity: 0,
                     scrollTrigger: {
@@ -55,7 +55,7 @@ function Journey() {
         return () => {
             ctx.revert();
         };
-    }, [lineHeight, lineOffset, paddingY, sectionHeight]);
+    }, [lineHeight, sectionHeight]);
 
     return (
         <section

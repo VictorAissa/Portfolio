@@ -2,23 +2,32 @@ import PropTypes from "prop-types";
 
 function DropMenu({ children, isOpen, toggle }) {
     return (
-        <>
-            {isOpen && (
-                <div
-                    className="w-full h-full fixed left-0 top-0 bg-overlay"
-                    onClick={toggle}
-                ></div>
-            )}
+        <div>
+            <div
+                className="w-full h-full fixed left-0 top-0 bg-overlay"
+                style={{
+                    // scale: isOpen ? "1" : "0",
+                    // visibility: isOpen ? "visible" : "hidden",
+                    // display: isOpen ? "block" : "none",
+                    // overflow: isOpen ? "visible" : "hidden",
+                    // height: isOpen ? "100%" : "0",
+                    opacity: isOpen ? "1" : "0",
+                    pointerEvents: isOpen ? "auto" : "none",
+                    transition: "opacity 0.5s ease",
+                }}
+                onClick={toggle}
+            ></div>
+
             <ul
-                className="fixed top-0 flex flex-col gap-5 p-7 z-30 bg-light"
+                className="fixed top-0 right-0 flex flex-col gap-5 p-7 z-30 bg-light"
                 style={{
                     transform: isOpen ? "translateY(0)" : "translateY(-100%)",
-                    transition: "transform 0.3s ease-in-out",
+                    transition: "transform 0.5s ease",
                 }}
             >
                 {children}
             </ul>
-        </>
+        </div>
     );
 }
 

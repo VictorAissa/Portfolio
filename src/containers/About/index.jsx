@@ -22,11 +22,11 @@ function About() {
     return (
         <section
             id="about"
-            className="h-[100vh] sm:h-[150vh] flex flex-column justify-start items-center bg-hero-background bg-cover brightness-90 bg-cover content_padding-x"
+            className="h-[120vh] sm:h-[150vh] flex flex-column justify-start items-center bg-hero-background bg-cover brightness-90 content_padding-x"
             ref={about}
         >
             <div
-                className="text-lg sm:text-xl text-white w-full sm:w-[50%] sm:min-w-[430px] sm:translate-y-[50%]"
+                className="text-lg sm:text-xl text-white w-full sm:w-[50%] sm:min-w-[430px] translate-y-[50%]"
                 ref={container}
             >
                 <h2 className="mb-8">About /</h2>

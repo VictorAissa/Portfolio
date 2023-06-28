@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import DropMenu from "../../components/DropMenu";
-import BurgerMenu from "../../components/BurgerTButton";
+import BurgerButton from "../../components/BurgerTButton";
 
 function Header() {
     const location = useLocation();
@@ -97,7 +97,7 @@ function Header() {
                             </Link>
                         </li>
                     </DropMenu>
-                    <BurgerMenu toggle={() => toggleBurger()} />
+                    <BurgerButton toggle={() => toggleBurger()} />
                 </>
             )}
         </header>

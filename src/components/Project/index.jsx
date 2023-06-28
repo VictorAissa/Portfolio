@@ -18,37 +18,17 @@ function Project({ year, title, cover, icons, index }) {
                 if (isHover) {
                     gsap.to(image.current, {
                         scale: 1.3,
+                        duration: 0.5,
                         ease: "power1.inOut",
                     });
                 }
                 if (!isHover) {
                     gsap.from(image.current, {
                         scale: 1.3,
+                        duration: 0.5,
                         ease: "power1.inOut",
                     });
                 }
-            }
-            if (!desktopResolution) {
-                gsap.to(image.current, {
-                    scale: 1.3,
-                    ease: "power1.inOut",
-                    scrollTrigger: {
-                        trigger: image.current,
-                        scrub: true,
-                        start: "50% 85%",
-                        end: "50% 50%",
-                    },
-                });
-                gsap.from(image.current, {
-                    scale: 1.3,
-                    ease: "power1.inOut",
-                    scrollTrigger: {
-                        trigger: image.current,
-                        scrub: true,
-                        start: "50% 50%",
-                        end: "50% 15%",
-                    },
-                });
             }
         }, article);
         return () => ctx.revert();
@@ -71,7 +51,7 @@ function Project({ year, title, cover, icons, index }) {
                     <img
                         src={cover}
                         alt=""
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover object-center project-image"
                         style={{
                             height: figureHeight + "vw",
                         }}
