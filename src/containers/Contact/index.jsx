@@ -69,7 +69,7 @@ function Contact() {
                 <label htmlFor="messageField">Message</label>
                 <textarea
                     className="input h-48 sm:h-60"
-                    placeholder="Salut Victor, tu vas bien ?"
+                    placeholder="Salut Victor"
                     id="messageField"
                     name="message"
                 ></textarea>

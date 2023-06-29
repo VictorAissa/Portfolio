@@ -23,6 +23,14 @@
         font-family: "work-sans", sans-serif;
         @apply bg-light;
     }
+    .app_layout {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    main {
+        @apply flex-grow;
+    }
     h1 {
         font-family: "helvetica-condensed", sans-serif;
         @apply uppercase text-6xl sm:text-8xl font-bold;

@@ -46,7 +46,7 @@ function Journey() {
                         trigger: article,
                         scrub: true,
                         start: "50% bottom",
-                        end: "bottom 60%",
+                        end: "bottom 90%",
                     },
                 });
             });

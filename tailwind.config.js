@@ -21,7 +21,7 @@ export default {
                 "journey-background":
                     "url('../src/assets/backgrounds/journey_bg.svg')",
                 "skills-background":
-                    "url('../src/assets/backgrounds/skills_bg.avif')",
+                    "url('../src/assets/backgrounds/skills_bg.svg')",
             },
         },
     },

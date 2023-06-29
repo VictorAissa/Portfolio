@@ -1,8 +1,12 @@
+/* eslint-disable react/no-unescaped-entities */
 function Error() {
     return (
-        <h1 className="text-4xl text-pink-500 flex justify-center items-center p-20">
-            Error
-        </h1>
+        <section className="w-full h-full flex flex-col items-center gap-10 p-20 ">
+            <h1 className="text-bright">404</h1>
+            <span className="text-3xl text-center">
+                Désolé, cette page n'existe pas 🤦‍♀️
+            </span>
+        </section>
     );
 }
 
