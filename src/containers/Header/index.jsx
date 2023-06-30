@@ -27,7 +27,7 @@ function Header() {
 
     return (
         <header
-            className="w-full flex items-center justify-end px-[4%] h-12 sm:h-16 text-xl bg-light z-30"
+            className="w-full h-12 flex items-center justify-end px-[3%] sm:py-8 text-xl bg-light z-30"
             style={{
                 position: !desktopResolution ? "fixed" : "static",
                 top: "0",
