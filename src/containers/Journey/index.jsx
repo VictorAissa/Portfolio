@@ -12,32 +12,39 @@ function Journey() {
     const line = useRef();
     const title = useRef();
 
-    // Dimensions des hauteurs de padding, de point de départ de la ligne et de la ligne en pixels
+    // Dimensions des hauteurs de padding, de point de départ de la ligne, de la ligne et de la section en pixels
     const paddingY = desktopResolution ? 160 : 112;
-    const lineOffset = desktopResolution ? 240 : 160;
-
+    const lineYOffset = desktopResolution ? paddingY + 240 : paddingY + 160;
     const [lineHeight, setLineHeight] = useState(0);
     const [sectionHeight, setSectionHeight] = useState(0);
 
+    // MàJ des dimensions hauteur de section et de ligne après chargement du composant ou changement d-une des valeurs
     useEffect(() => {
         const newSectionHeight = journey.current.getBoundingClientRect().height;
-        const newLineHeight = sectionHeight - (lineOffset + 2 * paddingY);
+        const newLineHeight = sectionHeight - (lineYOffset + paddingY);
         setSectionHeight(newSectionHeight);
         setLineHeight(newLineHeight);
-    }, [lineHeight, lineOffset, paddingY, sectionHeight]);
+    }, [lineHeight, lineYOffset, paddingY, sectionHeight]);
 
     useLayoutEffect(() => {
         let ctx = gsap.context((self) => {
-            gsap.to(line.current, {
-                height: lineHeight,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: line.current,
-                    scrub: 0.8,
-                    start: "top 50%",
-                    end: `${lineHeight} bottom`,
+            gsap.fromTo(
+                line.current,
+                {
+                    scaleY: 0,
+                    transformOrigin: "top center",
                 },
-            });
+                {
+                    scaleY: 1,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: line.current,
+                        scrub: 0.8,
+                        start: "top 50%",
+                        end: `${lineHeight} 70%`,
+                    },
+                }
+            );
             const experienceArticles = self.selector(".experience-article");
             experienceArticles.forEach((article) => {
                 gsap.from(article, {
@@ -67,15 +74,15 @@ function Journey() {
             }}
             ref={journey}
         >
-            {/* <div ref={contentWrapper}> */}
             <h2 className="mb-52 sm:mb-80" ref={title}>
                 Parcours /
             </h2>
             <div
-                className={`w-[3px] bg-white_transparent absolute left-[3%] sm:left-[50%] sm:-translate-x-[50%]`}
+                className={`w-[3px] bg-white_transparent absolute left-[2%] sm:left-[50%] sm:-translate-x-[50%]`}
                 style={{
                     // height: `calc(100% - 2 * ${paddingY} - ${lineOffset})`,
-                    top: `calc(${paddingY}px + ${lineOffset}px)`,
+                    height: lineHeight && lineHeight + "px",
+                    top: lineYOffset && lineYOffset + "px",
                 }}
                 ref={line}
             ></div>
@@ -94,7 +101,6 @@ function Journey() {
                     />
                 ))}
             </div>
-            {/* </div> */}
         </section>
     );
 }

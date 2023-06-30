@@ -1,8 +1,8 @@
 {
-    "redirects": [
+    "rewrites": [
         {
-            "source": "/project/:id",
-            "destination": "https://portfolio-victoraissa.vercel.app/"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }

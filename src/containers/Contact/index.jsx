@@ -1,34 +1,44 @@
 import { useEffect, useState } from "react";
 import { useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 
 function Contact() {
     const form = useRef();
+    const reCaptcha = useRef();
     const [resMessage, setResMessage] = useState(null);
+    const [isHuman, setIsHuman] = useState(false);
+    const siteKey = import.meta.env.VITE_SITEKEY_RECAPTCHA;
+    const serviceId = import.meta.env.VITE_SERVICEID_EMAILJS;
+    const templateId = import.meta.env.VITE_TEMPLATEID_EMAILJS;
+    const publicKey = import.meta.env.VITE_PUBLICKEY_EMAILJS;
 
+    const onChange = () => {
+        setIsHuman(true);
+    };
+
+    // emailjs.sendForm(serviceID, templateID, templateParams, publicKey);
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs
-            .sendForm(
-                "service_ijcr42k",
-                "template_azyjj3v",
-                form.current,
-                "qiAyQSWc4yRGXZUzJ"
-            )
-            .then(
-                (result) => {
-                    if (result.text === "OK") {
-                        setResMessage("C'est parti !");
-                    }
-                },
-                (error) => {
-                    console.log(error);
-                    setResMessage("Aïe, il y a eu un problème");
+        if (!isHuman) {
+            setResMessage("On ne sait toujours pas si vous êtes humain !");
+            return;
+        }
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+            (result) => {
+                if (result.text === "OK") {
+                    setResMessage("C'est parti !");
                 }
-            );
+            },
+            (error) => {
+                console.log(error);
+                setResMessage("Aïe, il y a eu un problème");
+            }
+        );
         form.current[0].value = "";
         form.current[1].value = "";
         form.current[2].value = "";
+        reCaptcha.current.reset();
     };
 
     useEffect(() => {
@@ -37,7 +47,7 @@ function Contact() {
                 setResMessage(null);
             }, 5000);
         }
-    });
+    }, [resMessage]);
 
     return (
         <section
@@ -55,14 +65,16 @@ function Contact() {
                     className="input"
                     type="text"
                     placeholder="John Doe"
+                    required={true}
                     id="nameField"
                     name="user_name"
                 />
                 <label htmlFor="emailField">Email</label>
                 <input
                     className="input"
-                    type="text"
+                    type="email"
                     placeholder="johndoe@email.com"
+                    required={true}
                     id="emailField"
                     name="user_email"
                 />
@@ -70,9 +82,16 @@ function Contact() {
                 <textarea
                     className="input h-48 sm:h-60"
                     placeholder="Salut Victor"
+                    required={true}
                     id="messageField"
                     name="message"
                 ></textarea>
+                <ReCAPTCHA
+                    sitekey={siteKey}
+                    onChange={onChange}
+                    ref={reCaptcha}
+                    className="mb-8"
+                />
                 <button
                     className="self-start rounded-sm text-white bg-bright px-2 py-1 "
                     type="submit"
