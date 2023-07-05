@@ -75,13 +75,13 @@ function Header() {
             {desktopResolution ? (
                 <nav className="w-full flex justify-between">
                     {projectPage && (
-                        <div onClick={handleGoBack}>
+                        <button type="button" onClick={handleGoBack}>
                             <img
                                 src={arrowBlack}
                                 alt="Flèche retour"
                                 className="w-5 md:w-7 inline-block rotate-180"
                             />
-                        </div>
+                        </button>
                     )}
                     <ul className="flex w-full justify-end gap-[4%]">
                         <li>
