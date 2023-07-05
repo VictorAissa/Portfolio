@@ -1,33 +1,71 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import DropMenu from "../../components/DropMenu";
 import BurgerButton from "../../components/BurgerTButton";
+import arrowBlack from "../../assets/icons/arrows/short_black.png";
 
 function Header() {
+    const navigate = useNavigate();
     const location = useLocation();
+
     const [windowWidth] = useState(window.innerWidth);
     const [isOpen, setIsOpen] = useState(false);
+
     const desktopResolution = windowWidth > 640;
+    const projectPage = location.pathname.includes("project") ? true : false;
 
-    const toggleBurger = () => {
-        setIsOpen((prevState) => !prevState);
-    };
+    // useEffect(() => {
+    //     const handleScrollToTop = () => {
+    //         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    //     };
 
+    //     window.addEventListener("popstate", handleScrollToTop);
+
+    //     return () => {
+    //         window.removeEventListener("popstate", handleScrollToTop);
+    //     };
+    // }, []);
+
+    // useEffect(() => {
+    //     if (location.hash) {
+    //         let elem = document.getElementById(location.hash.slice(1));
+    //         if (elem) {
+    //             elem.scrollIntoView({ behavior: "smooth" });
+    //         }
+    //     } else {
+    //         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    //     }
+    // }, [location]);
+
+    // Navigation vers l'element possedant l'id ou le haut de la page si pas de # dans l'url
     useEffect(() => {
+        const handleScrollToTop = () => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        };
+
         if (location.hash) {
             let elem = document.getElementById(location.hash.slice(1));
             if (elem) {
                 elem.scrollIntoView({ behavior: "smooth" });
             }
         } else {
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            handleScrollToTop();
         }
     }, [location]);
 
+    // Retour à la page précédente géré sans Link pour permettre d'atteindre l'element visé via son id
+    const handleGoBack = () => {
+        navigate(-1);
+    };
+
+    const toggleBurger = () => {
+        setIsOpen((prevState) => !prevState);
+    };
+
     return (
         <header
-            className="w-full h-12 flex items-center justify-end px-[3%] sm:py-8 text-xl bg-light z-30"
+            className="w-full h-12 flex items-center justify-end px-[3%] sm:py-8 md:text-xl bg-light z-30"
             style={{
                 position: !desktopResolution ? "fixed" : "static",
                 top: "0",
@@ -35,7 +73,16 @@ function Header() {
             }}
         >
             {desktopResolution ? (
-                <nav className="flex w-full">
+                <nav className="w-full flex justify-between">
+                    {projectPage && (
+                        <div onClick={handleGoBack}>
+                            <img
+                                src={arrowBlack}
+                                alt="Flèche retour"
+                                className="w-5 md:w-7 inline-block rotate-180"
+                            />
+                        </div>
+                    )}
                     <ul className="flex w-full justify-end gap-[4%]">
                         <li>
                             <Link to="/#about">About/</Link>

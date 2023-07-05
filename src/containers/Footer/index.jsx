@@ -9,7 +9,7 @@ function Footer() {
     return (
         <footer className="bg-dark text-white font-light content_padding-x py-8">
             <ul className="flex flex-col gap-3">
-                <li>victor.aissa@gmail.com</li>
+                <li>victor.aissa.laborde@gmail.com</li>
                 <li>
                     <a
                         href={linkedinUrl}

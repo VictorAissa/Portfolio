@@ -36,7 +36,7 @@ function Project({ year, title, cover, icons, index }) {
 
     return (
         <article
-            className=" justify-self-center max-w-[490px]"
+            className=" justify-self-center max-w-[490px] "
             style={{
                 width: articleWidth + "vw",
             }}
@@ -47,7 +47,7 @@ function Project({ year, title, cover, icons, index }) {
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
             >
-                <figure className="relative max-h-[294px] rounded-sm overflow-hidden">
+                <figure className="relative max-h-[294px] rounded-sm overflow-hidden shadow-lg">
                     <img
                         src={cover}
                         alt=""

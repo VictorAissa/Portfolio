@@ -116,9 +116,9 @@ function About() {
                     <span>ma </span>
                     <span>formation </span>
                     <span>en </span>
-                    <span>particulier </span>
-                    <span>en </span>
                     <span>abordant </span>
+                    <span>en </span>
+                    <span>particulier </span>
                     <span>les </span>
                     <span>technologies </span>
                     <span>back-end </span>

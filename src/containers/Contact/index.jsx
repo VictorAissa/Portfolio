@@ -93,7 +93,7 @@ function Contact() {
                     className="mb-8"
                 />
                 <button
-                    className="self-start rounded-sm text-white bg-bright px-2 py-1 "
+                    className="self-start rounded-sm text-white bg-bright px-2 py-1 shadow-sm"
                     type="submit"
                 >
                     Envoyer
