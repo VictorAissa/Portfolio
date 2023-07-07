@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import Experience from "../../components/Experience";
+import ExperienceItem from "../../components/ExperienceItem";
 import data from "../../assets/data/data.json";
 
 function Journey() {
@@ -8,7 +8,8 @@ function Journey() {
     const desktopResolution = windowWidth > 640;
 
     const journeyItems = data.journey;
-    const journey = useRef();
+
+    const journey = useRef(null);
     const line = useRef();
     const title = useRef();
 
@@ -18,7 +19,7 @@ function Journey() {
     const [lineHeight, setLineHeight] = useState(0);
     const [sectionHeight, setSectionHeight] = useState(0);
 
-    // MàJ des dimensions hauteur de section et de ligne après chargement du composant ou changement d-une des valeurs
+    // MàJ des dimensions hauteur de section et de ligne après chargement du composant ou changement d'une des valeurs associées
     useEffect(() => {
         const newSectionHeight = journey.current.getBoundingClientRect().height;
         const newLineHeight = sectionHeight - (lineYOffset + paddingY);
@@ -28,6 +29,7 @@ function Journey() {
 
     useLayoutEffect(() => {
         let ctx = gsap.context((self) => {
+            // Apparition de la ligne au scroll
             gsap.fromTo(
                 line.current,
                 {
@@ -45,6 +47,8 @@ function Journey() {
                     },
                 }
             );
+
+            // Apparition des éléments d'experience au scroll
             const experienceArticles = self.selector(".experience-article");
             experienceArticles.forEach((article) => {
                 gsap.from(article, {
@@ -80,15 +84,15 @@ function Journey() {
             <div
                 className={`w-[3px] bg-white_transparent absolute left-[2%] sm:left-[50%] sm:-translate-x-[50%]`}
                 style={{
-                    // height: `calc(100% - 2 * ${paddingY} - ${lineOffset})`,
                     height: lineHeight && lineHeight + "px",
                     top: lineYOffset && lineYOffset + "px",
                 }}
                 ref={line}
             ></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[10%] gap-y-96">
+                {/* Création des éléments du parcours */}
                 {journeyItems.map((item, index) => (
-                    <Experience
+                    <ExperienceItem
                         key={`experience-${index}`}
                         year={item.year}
                         title={item.title}

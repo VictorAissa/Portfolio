@@ -1,13 +1,14 @@
-import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import data from "../../assets/data/data.json";
 import arrowShort from "../../assets/icons/arrows/short_black.png";
 
 function ProjectDetails() {
-    const { id } = useParams();
-    const projectData = data.projects[id];
     const [windowWidth] = useState(window.innerWidth);
     const desktopResolution = windowWidth > 640;
+
+    const { id } = useParams();
+    const projectData = data.projects[id];
 
     return (
         <section className="flex flex-col gap-10 content_padding-x py-24 sm:py-32">

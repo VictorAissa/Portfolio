@@ -6,8 +6,12 @@ import emailjs from "emailjs-com";
 function Contact() {
     const form = useRef();
     const reCaptcha = useRef();
+
     const [resMessage, setResMessage] = useState(null);
     const [isHuman, setIsHuman] = useState(false);
+
+    // Récuperation des crédentials confidentiels nécessaires au fonctionnement de reCaptcha
+    // dans le fichier .env
     const siteKey = import.meta.env.VITE_SITEKEY_RECAPTCHA;
     const serviceId = import.meta.env.VITE_SERVICEID_EMAILJS;
     const templateId = import.meta.env.VITE_TEMPLATEID_EMAILJS;
@@ -17,7 +21,13 @@ function Contact() {
         setIsHuman(true);
     };
 
-    // emailjs.sendForm(serviceID, templateID, templateParams, publicKey);
+    /**
+     * Gestion de l'envoi du formulaire via EmailJS.
+     * Paramètres de .sendForm :
+     * emailjs.sendForm(serviceID, templateID, templateParams, publicKey)
+     *
+     * @param {Event} submit - soumission du formulaire
+     */
     const sendEmail = (e) => {
         e.preventDefault();
         if (!isHuman) {
@@ -41,6 +51,7 @@ function Contact() {
         reCaptcha.current.reset();
     };
 
+    // Affichage des message d'erreur ou de succès déterminés dans sendEmail pendant 5s
     useEffect(() => {
         if (resMessage) {
             setTimeout(() => {

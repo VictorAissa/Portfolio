@@ -15,7 +15,7 @@ import Journey from "./containers/Journey";
 import Projects from "./containers/Projects";
 import Skills from "./containers/Skills";
 import Contact from "./containers/Contact";
-import "./index.css";
+import "./main.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(

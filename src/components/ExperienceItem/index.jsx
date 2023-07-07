@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Experience({
+function ExperienceItem({
     year,
     title,
     subtitle,
@@ -13,10 +13,25 @@ function Experience({
 }) {
     const [windowWidth] = useState(window.innerWidth);
     const desktopResolution = windowWidth > 640;
+
+    /**
+     * Détermine si un nombre est pair, utile pour déterminer la place des items à gauche
+     * ou à droite de la ligne.
+     *
+     * @param {Number}
+     * @returns {Boolean} true si le nombre est pair / false s'il est impair
+     */
     const isEven = (number) => {
         return number % 2 === 0 ? true : false;
     };
 
+    /**
+     * Gère le layout des éléments en fonction de la résolution : à gauche ou à droite de la ligne
+     * sur desktop, à droite sur mobile.
+     *
+     * @param {Number} index - Index de l'élément créé par mapping.
+     * @returns {Object} - Contenant les éléments de style gérant la disposition sur grid.
+     */
     const itemStyle = (index) => {
         if (desktopResolution) {
             return {
@@ -33,6 +48,13 @@ function Experience({
         }
     };
 
+    /**
+     * Gère l'alignement à gauche ou à droite des éléments de ExperienceItem en fonction
+     * du placement de ce dernier.
+     *
+     * @param {Number} index - Index de l'élément créé par mapping.
+     * @returns {String} - Valeur de textAlign contenue dans chaque élément de ExperienceItem.
+     */
     const alignmentStyle = (index) => {
         return !desktopResolution ? "start" : isEven(index) ? "end" : "start";
     };
@@ -64,7 +86,7 @@ function Experience({
                     {icons.map((icon, index) => (
                         <img
                             src={icon}
-                            alt=""
+                            alt={`icone de competence acquise n° ${index}`}
                             key={`icon-${index}`}
                             className="w-10"
                         />
@@ -74,7 +96,7 @@ function Experience({
             {illustration && (
                 <img
                     src={illustration}
-                    alt=""
+                    alt="Illustration de l'experience"
                     className="mt-5 w-full max-w-2xl"
                 />
             )}
@@ -82,7 +104,7 @@ function Experience({
     );
 }
 
-Experience.propTypes = {
+ExperienceItem.propTypes = {
     title: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
@@ -93,4 +115,4 @@ Experience.propTypes = {
     illustration: PropTypes.string,
 };
 
-export default Experience;
+export default ExperienceItem;

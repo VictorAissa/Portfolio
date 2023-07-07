@@ -1,19 +1,21 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import Project from "../../components/Project";
+import ProjectItem from "../../components/ProjectItem";
 import data from "../../assets/data/data.json";
 
 function Projects() {
     const [windowWidth] = useState(window.innerWidth);
     const desktopResolution = windowWidth > 640;
+
     const projectsItems = data.projects;
+
     const projectsSection = useRef();
 
     useLayoutEffect(() => {
         let ctx = gsap.context((self) => {
+            // Effet de profondeur des images des items Project au scroll en cas d'affichage sur mobile
             if (!desktopResolution) {
                 const projectImages = self.selector(".project-image");
-
                 projectImages.forEach((image) => {
                     const tl = gsap.timeline({
                         scrollTrigger: {
@@ -39,8 +41,9 @@ function Projects() {
             <h2 className="mb-36 sm:mb-52 2xl:mb-72">Projets /</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-36 sm:gap-y-56 2xl:gap-y-72">
+                {/* Création des items Project */}
                 {projectsItems.map((project, index) => (
-                    <Project
+                    <ProjectItem
                         key={`project-${index}`}
                         year={project.year}
                         title={project.title}

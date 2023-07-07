@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import DropMenu from "../../components/DropMenu";
 import BurgerButton from "../../components/BurgerTButton";
 import arrowBlack from "../../assets/icons/arrows/short_black.png";
@@ -15,30 +14,7 @@ function Header() {
     const desktopResolution = windowWidth > 640;
     const projectPage = location.pathname.includes("project") ? true : false;
 
-    // useEffect(() => {
-    //     const handleScrollToTop = () => {
-    //         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    //     };
-
-    //     window.addEventListener("popstate", handleScrollToTop);
-
-    //     return () => {
-    //         window.removeEventListener("popstate", handleScrollToTop);
-    //     };
-    // }, []);
-
-    // useEffect(() => {
-    //     if (location.hash) {
-    //         let elem = document.getElementById(location.hash.slice(1));
-    //         if (elem) {
-    //             elem.scrollIntoView({ behavior: "smooth" });
-    //         }
-    //     } else {
-    //         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    //     }
-    // }, [location]);
-
-    // Navigation vers l'element possedant l'id ou le haut de la page si pas de # dans l'url
+    // Navigation vers l'element possedant l'id ou le haut de la page si pas d'id défini
     useEffect(() => {
         const handleScrollToTop = () => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -105,6 +81,7 @@ function Header() {
                     </ul>
                 </nav>
             ) : (
+                // Affichage de BurgerButton et création de DropMenu (caché en translate Y) si affichage sur mobile
                 <>
                     <DropMenu isOpen={isOpen} toggle={() => toggleBurger()}>
                         <li className="inside-nav_item">

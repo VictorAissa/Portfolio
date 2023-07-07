@@ -1,19 +1,24 @@
 import { useState, useRef, useLayoutEffect } from "react";
-import { gsap } from "gsap";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
 import PropTypes from "prop-types";
 
-function Project({ year, title, cover, icons, index }) {
+function ProjectItem({ year, title, cover, icons, index }) {
     const [windowWidth] = useState(window.innerWidth);
     const desktopResolution = windowWidth > 640;
+
+    // Détermination des tailles et ratio des dimensions d'un item Project
+    // en fonction de la résolution
     const articleWidth = desktopResolution ? 35 : 80;
     const figureHeight = articleWidth * 0.6;
+
     const article = useRef();
     const image = useRef();
     const [isHover, setIsHover] = useState(false);
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
+            // Effet de profondeur de l'image des items Project au survol
             if (desktopResolution) {
                 if (isHover) {
                     gsap.to(image.current, {
@@ -44,6 +49,7 @@ function Project({ year, title, cover, icons, index }) {
         >
             <Link
                 to={`/project/${index}`}
+                // Gestion du survol du lien contenu dans les items Project
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
             >
@@ -91,7 +97,7 @@ function Project({ year, title, cover, icons, index }) {
     );
 }
 
-Project.propTypes = {
+ProjectItem.propTypes = {
     title: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     icons: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -99,4 +105,4 @@ Project.propTypes = {
     index: PropTypes.number.isRequired,
 };
 
-export default Project;
+export default ProjectItem;

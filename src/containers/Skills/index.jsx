@@ -12,8 +12,8 @@ function Skills() {
 
     useLayoutEffect(() => {
         let ctx = gsap.context((self) => {
-            // eslint-disable-next-line no-unused-vars
-            const pinTimeline = gsap.timeline({
+            // Immobilisation du wrapper contenant le titre et les icônes au scroll
+            gsap.timeline({
                 scrollTrigger: {
                     trigger: skills.current,
                     start: "top top",
@@ -21,6 +21,8 @@ function Skills() {
                     pin: pinWrapper.current,
                 },
             });
+
+            // Apparition des icônes dans leur container au scroll
             const skillsIcons = self.selector(".skill-icon");
             skillsIcons.forEach((icon, index) => {
                 const tl = gsap.timeline();
@@ -61,6 +63,7 @@ function Skills() {
                     Skills /
                 </h2>
                 <div className="flex flex-wrap gap-8 2xl:gap-16 border-red border-opacity-100">
+                    {/* Création des icônes depuis data */}
                     {icons.map((icon, index) => (
                         <Icon
                             key={`icon-${index}`}

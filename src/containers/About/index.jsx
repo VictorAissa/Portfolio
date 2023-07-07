@@ -9,6 +9,7 @@ function About() {
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
+            // Effet de parallaxe du texte sur le fond
             gsap.to([aboutContainer.current], {
                 yPercent: -150,
                 ease: "none",
@@ -18,6 +19,7 @@ function About() {
                 },
             });
 
+            // Effet d'apparition des lettres
             const spans = aboutDescription.current.querySelectorAll("span");
             spans.forEach((span, index) => {
                 let tl = gsap.timeline({
@@ -64,8 +66,8 @@ function About() {
                         ReactJS.
                     </span>
                     <span className="block">
-                        J'aspire à continuer ma formation en particulier en
-                        abordant les technologies back-end et ainsi couvrir tous
+                        J'aspire à continuer ma formation en
+                        abordant en particulier les technologies back-end et ainsi couvrir tous
                         les aspects d'une application web ou mobile.
                     </span> */}
                     <span>Développeur </span>

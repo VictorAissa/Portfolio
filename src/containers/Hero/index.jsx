@@ -10,6 +10,7 @@ function Hero() {
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
+            // Apparition des lignes de texte de la section Hero
             gsap.fromTo(
                 [
                     textLine1.current,
