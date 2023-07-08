@@ -1,5 +1,5 @@
 import arrowShort from "../../assets/icons/arrows/short_white.png";
-import pdf from "../../assets/data/Victor_LABORDE_CV.pdf";
+import pdf from "../../assets/data/Victor_LABORDE_CV_ApprentiDevWeb.pdf";
 
 function Footer() {
     const linkedinUrl = "https://www.linkedin.com/in/victorlaborde/";

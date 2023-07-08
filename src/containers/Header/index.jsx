@@ -82,7 +82,16 @@ function Header() {
                 </nav>
             ) : (
                 // Affichage de BurgerButton et création de DropMenu (caché en translate Y) si affichage sur mobile
-                <>
+                <nav className="w-full flex justify-between">
+                    {projectPage && (
+                        <button type="button" onClick={handleGoBack}>
+                            <img
+                                src={arrowBlack}
+                                alt="Flèche retour"
+                                className="w-5 md:w-7 inline-block rotate-180"
+                            />
+                        </button>
+                    )}
                     <DropMenu isOpen={isOpen} toggle={() => toggleBurger()}>
                         <li className="inside-nav_item">
                             <Link to="/#about" onClick={() => toggleBurger()}>
@@ -122,7 +131,7 @@ function Header() {
                         </li>
                     </DropMenu>
                     <BurgerButton toggle={() => toggleBurger()} />
-                </>
+                </nav>
             )}
         </header>
     );
