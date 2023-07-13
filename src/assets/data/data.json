@@ -79,8 +79,7 @@
             "icons": [
                 "/assets/icons/css.png",
                 "/assets/icons/react.png",
-                "/assets/icons/sass.png",
-                "/assets/icons/redux.png"
+                "/assets/icons/sass.png"
             ]
         },
         {
