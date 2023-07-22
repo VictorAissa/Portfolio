@@ -12,7 +12,7 @@ function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     const desktopResolution = windowWidth > 640;
-    const projectPage = location.pathname.includes("project") ? true : false;
+    const isIndexPage = location.pathname === "/";
 
     // Navigation vers l'element possedant l'id ou le haut de la page si pas d'id défini
     useEffect(() => {
@@ -50,7 +50,7 @@ function Header() {
         >
             {desktopResolution ? (
                 <nav className="w-full flex justify-between">
-                    {projectPage && (
+                    {!isIndexPage && (
                         <button type="button" onClick={handleGoBack}>
                             <img
                                 src={arrowBlack}
@@ -83,7 +83,7 @@ function Header() {
             ) : (
                 // Affichage de BurgerButton et création de DropMenu (caché en translate Y) si affichage sur mobile
                 <nav className="w-full flex justify-between">
-                    {projectPage && (
+                    {!isIndexPage && (
                         <button type="button" onClick={handleGoBack}>
                             <img
                                 src={arrowBlack}
